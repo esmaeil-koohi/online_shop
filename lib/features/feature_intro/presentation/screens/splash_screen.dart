@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:shope_bloc/common/utils/custom_snackbar.dart';
 import 'package:shope_bloc/features/feature_intro/presentation/bloc/splash_cubit/splash_cubit.dart';
+import 'package:shope_bloc/features/feature_intro/presentation/screens/intro_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -87,6 +88,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 3),
       () {
         CustomSnackBar.showSnack(context, 'شما وارد شدید', Colors.green);
+        Navigator.pushNamed(context, IntroScreen.routeName, arguments: 'beSenior');
       },
     );
   }
